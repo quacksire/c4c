@@ -5,7 +5,10 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    'node_modules/daisyui/dist/**/*.js',
+    'node_modules/react-daisyui/dist/**/*.js',
   ],
+  plugins: [require('daisyui')],
   theme: {
     extend: {
       backgroundImage: {
@@ -15,6 +18,5 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
 }
 export default config
