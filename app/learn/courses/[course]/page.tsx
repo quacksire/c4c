@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 
 let courses = [
@@ -467,8 +468,9 @@ let courses = [
 
 
 
-
 export default async function Page({ params }: { params: { course: string } }) {
+
+    
     
     let course = await courses.find(course => String(course.name).toLowerCase().replaceAll(" ", "-") === params.course);
     console.log(course?.subject.split((" ")))
@@ -551,12 +553,12 @@ export default async function Page({ params }: { params: { course: string } }) {
                     </li>
                 </ul>
                 <div className="divider divider-neutral"></div>
-               <button className="btn btn-primary">Get Started</button>
+               <Link className="btn btn-primary" href={`https://youtube.com/results?search_query=${String(params.course).replaceAll("-", "+")}`} target={'_'} >Get Started</Link>
              </div>
            </div>
          </div>
 
         </div>  
-        // youtube.com/results?search_query=art+history+foundations
+        // 
     );
     }
