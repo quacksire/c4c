@@ -12,8 +12,8 @@ export default function Home() {
             <p className="py-6">Utilizing technology to empower classrooms to become hubs of accessible STEM learning, fueled by a diverse range of courses that cater to all.
             </p>
             <div className='flex justify-center flex-row space-x-3'>
-              <Link className="btn btn-neutral" href="#allstats" >Explore <ChevronsDown/></Link>
-              <Link className="btn btn-neutral" href="/learn" >Our Courses <Youtube/></Link>
+              <Link className="btn btn-neutral" href={"#allstats"} >Explore <ChevronsDown/></Link>
+              <Link className="btn btn-neutral" href={"/learn"} >Our Courses <Youtube/></Link>
             </div>
           </div>
         </div>
