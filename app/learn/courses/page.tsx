@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from 'next/image'
 
 let courses = [
   {
@@ -471,7 +472,9 @@ export default async function CoursesPage() {
     function CourseCard({course}: any) {
         return (
           <Link className="card w-96 bg-base-100 shadow-xl" href={`/learn/courses/${String(course.name).toLowerCase().replaceAll(" ", "-")}`}>
-            <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <figure>
+                <Image src={`https://picsum.photos/id/${Math.floor((Math.random() * 200) + 1)}/500/500`} alt={course.skills.join(', ')} width={500} height={500} loading="lazy" />
+            </figure>
             <div className="card-body">
               <h2 className="card-title">
                 {course.name}
@@ -487,8 +490,6 @@ export default async function CoursesPage() {
         )
       }
 
-    console.log(courses)
-
     return (
         <>
         <div className="hero min-h-[50vh] bg-base-200">
@@ -501,12 +502,14 @@ export default async function CoursesPage() {
         </div>
 
         {/* TODO: sort */}
-
-        <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4 mr-2 ml-2 items.center">
-            {courses.map((course: any) => (
-                <CourseCard course={course} key={course.name} />
-            ))}
+        <div className="w-screen flex justify-center items-center bg-base-200">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-20 items-center">
+                {courses.map((course: any) => (
+                    <CourseCard course={course} key={course.name} />
+                ))}
+            </div>
         </div>
+        
         </>
     )
 }

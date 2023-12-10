@@ -8,6 +8,8 @@ const supabase = createClientComponentClient({
     supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 })
 
+import { Check } from 'lucide-react'
+
 const ContactPage: React.FC = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -93,7 +95,9 @@ const ContactPage: React.FC = () => {
                         ></textarea>
                     </div>
 
-                    <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
+                    {!success && !loading && (<button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>)}
+                    {!success && loading && (<button type="submit" className="bg-grey-500 text-white px-4 py-2 rounded-md" disabled> <span className="loading loading-spinner loading-xs"></span></button>)}
+                    {success && loading && (<button type="submit" className="bg-green-500 text-white px-4 py-2 rounded-md" disabled>  <Check /> Sent </button>)}
                 </form>
             </div>
         </div>

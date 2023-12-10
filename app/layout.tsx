@@ -23,11 +23,11 @@ export default function RootLayout({
       <main className='w-screen h-screen bg-base'>
         {children}
       </main>
-      <footer className='w-screen h-16 bg-base bottom-1'>
+      {/* <footer className='w-screen h-16 bg-base bottom-1'>
         <div className='flex justify-center items-center h-full'>
           <p className='text-gray-400 text-sm'>© {new Date().getFullYear()} ISOaccess</p>
         </div>
-      </footer>
+      </footer> */}
 
       </body>
     </html>
