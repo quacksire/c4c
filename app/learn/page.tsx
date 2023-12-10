@@ -1,4 +1,5 @@
 
+import NameGreeting from "@/components/NameGreeting";
 import AccountCTA from "../../components/AccountCTA";
 import Link from "next/link";
 export default () => {
@@ -12,13 +13,15 @@ export default () => {
             <div className="hero min-w-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div>
-                <h1 className="text-5xl font-bold">Hiya firstName!</h1>
+                <h1 className="text-5xl font-bold">
+                    <NameGreeting />
+                </h1>
                 </div>
             </div>
             </div>
         </div>
-        <div className="flex flex-col">
-            <div className="stats shadow">
+        <div className="flex flex-col space-y-10">
+            <div className="stats w-[70vw] justify-center items-center px-5">
                 <div className="stat">
                     <div className="stat-figure text-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
@@ -38,9 +41,6 @@ export default () => {
                 <div className="stat">
                     <div className="stat-figure text-secondary">
                     <div className="avatar online">
-                        <div className="w-16 rounded-full">
-                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                        </div>
                     </div>
                     </div>
                     <div className="stat-value">86%</div>
@@ -48,7 +48,7 @@ export default () => {
                     <div className="stat-desc text-secondary">Try to get it up to 90% !</div>
                 </div>
             </div>
-            <div className="stats">
+            <div className="stats w-[70vw] justify-center items-center px-5">
                 <div className="stat">
                     <div className="stat-figure text-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -74,9 +74,9 @@ export default () => {
                     <div className="stat-desc">↘︎ 3 (.002)</div>
                 </div>
             </div>
-            <div className="flex flex-rowjustify-center items-center">
-            <Link className='btn'> Resume Courses</Link>
-            <Link className='btn'>Start a Course</Link>
+            <div className="flex flex-col justify-center items-center">
+            <Link className='btn' href={'/learn/courses/resume'}> Resume Courses</Link>
+            <Link className='btn' href={'/learn/courses'}>Start a Course</Link>
             </div>
         </div>
         </>

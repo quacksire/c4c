@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link"
 import Image from 'next/image'
 
@@ -466,8 +467,106 @@ let courses = [
   }
 ]
 
+const uniqueSkills = [
+  "Art History",
+  "Cybersecurity Basics",
+  "Public Speaking",
+  "Music Theory",
+  "Fitness",
+  "Nutrition",
+  "Creative Writing",
+  "Mobile App Development",
+  "Programming",
+  "Sustainability Practices",
+  "Digital Marketing",
+  "Well-being",
+  "Economic Principles",
+  "Robotics",
+  "Game Design",
+  "Conflict Resolution",
+  "AI Ethics",
+  "Interior Design",
+  "Ancient History",
+  "Problem Solving",
+  "Mathematics",
+  "Business Analytics",
+  "Critical Thinking",
+  "Astronomy Basics",
+  "Sustainable Design",
+  "Negotiation Skills",
+  "Philosophy of Mind",
+  "Advanced Web Development",
+  "Python",
+  "Data Analysis",
+  "Java Programming",
+  "C#",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Node.js",
+  "React",
+  "UI/UX Design",
+  "Mobile App Design",
+  "Data Structures",
+  "Algorithms",
+  "Ruby on Rails",
+  "Blockchain Basics",
+  "Smart Contracts",
+  "Swift",
+  "iOS Development",
+  "Django",
+  "API Development",
+  "React Native",
+  "Machine Learning",
+  "TensorFlow",
+  "DevOps Practices",
+  "Continuous Integration",
+  "Angular",
+  "Rust Programming",
+  "GraphQL",
+  "API Design",
+  "Docker",
+  "Containerization",
+  "Vue.js",
+  "Frontend Development",
+  "Kotlin",
+  "Android Development",
+  "Data Science",
+  "R Programming",
+  "SQL",
+  "Scala Programming",
+  "Java Programming",
+  "MATLAB",
+  "Julia Programming",
+  "C# Programming",
+  "Backend Development",
+  "Unity",
+  "Game Design",
+  "Ethical Hacking",
+  "Cloud Computing",
+  "AWS",
+  "Flutter",
+  "Mobile Game Development",
+  "C++ Programming",
+  "Excel",
+  "Blender",
+  "3D Modeling",
+  "Monetization",
+  "Google Cloud Platform",
+  "Cloud Services",
+  "Arduino Programming",
+  "DIY Electronics",
+  "Social Media Marketing"
+];
 
-export default async function CoursesPage() {
+import { useState } from "react";
+
+export default function CoursesPage() {
+
+    //const [selectedSkill, setSelectedSkill] = useState([]);
+
+
+
 
     function CourseCard({course}: any) {
         return (
@@ -491,7 +590,7 @@ export default async function CoursesPage() {
       }
 
     return (
-        <>
+        <div className="bg-base-200 overflow-x-none">
         <div className="hero min-h-[50vh] bg-base-200">
             <div className="hero-content text-center">
             <div className="max-w-md">
@@ -501,16 +600,33 @@ export default async function CoursesPage() {
             </div>
         </div>
 
-        {/* TODO: sort */}
-        <div className="w-screen flex justify-center items-center bg-base-200">
+        <div className="mb-3 bg-base-200 ">
+            <div className="text-center">
+                <p className="py-6">Mix and match!</p>
+                <p className="py-6 text-muted m-1">Find the course that best fits you!</p>
+                <div className="carousel rounded-box">
+                    {uniqueSkills.map((skill: any) => (
+                        <div className="carousel-item" key={skill}>
+                            <div className="p-4 rounded-box text-base-content">
+                                <div className="badge mx-2 badge-outline">{skill}</div>
+                            </div>
+                        </div>
+                    ))
+                    }
+                </div>
+                
+            </div>
+        </div>
+        
+        <div className="w-screen flex justify-center items-center bg-base-200 overflow-x-none">
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-20 items-center">
                 {courses.map((course: any) => (
-                    <CourseCard course={course} key={course.name} />
+                    <CourseCard course={course} key={course.name}  />
                 ))}
             </div>
         </div>
         
-        </>
+        </div>
     )
 }
 /*

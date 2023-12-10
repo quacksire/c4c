@@ -34,7 +34,7 @@ export default function NavBar() {
                 <img src="/isoaccess-logo-dark.webp" alt="logo" className="h-10 dark:flex hidden"/>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-ghost btn-circle">
+                <button className="btn btn-circle btn-ghost">
                     <Search />
                 </button>
                 {user && (
@@ -46,7 +46,7 @@ export default function NavBar() {
                             </summary>
                             <ul className="bg-base-100 rounded-t-none">
                                 <li>
-                                    <button className="btn hover:btn-error">Sign Out</button>
+                                    <Link className="btn hover:btn-error" href={'/auth/signout'}>Sign Out</Link>
                                 </li>
                             </ul>
                             </details>
