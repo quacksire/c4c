@@ -9,18 +9,16 @@ export default () => {
         <AccountCTA />
 
         {/* Logged in content */}
-        <div className={"container text-white"}>
+        <div className={"container text-inherit"}>
             <div className="hero min-w-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div>
-                <h1 className="text-5xl font-bold">
-                    <NameGreeting />
-                </h1>
+                <div className="hero-content flex justify-center items-center w-screen">
+                    <h1 className="text-6xl flex justify-center items-center font-bold text-center pl-12">
+                        <NameGreeting />
+                    </h1>
                 </div>
             </div>
-            </div>
         </div>
-        <div className="flex flex-col space-y-10">
+        <div className="w-screen h-screen items-center flex flex-col space-y-10">
             <div className="stats w-[70vw] justify-center items-center px-5">
                 <div className="stat">
                     <div className="stat-figure text-primary">
@@ -53,7 +51,7 @@ export default () => {
                     <div className="stat-figure text-secondary">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <div className="stat-title">Downloads</div>
+                    <div className="stat-title">New Users</div>
                     <div className="stat-value">31K</div>
                     <div className="stat-desc">Jan 1st - Feb 1st</div>
                 </div>
@@ -74,9 +72,10 @@ export default () => {
                     <div className="stat-desc">↘︎ 3 (.002)</div>
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-            <Link className='btn' href={'/learn/courses/resume'}> Resume Courses</Link>
-            <Link className='btn' href={'/learn/courses'}>Start a Course</Link>
+            <div className="flex flex-col justify-center items-center space-y-4">
+                <Link className='btn' href={'/learn/courses'}> Start a Course</Link>
+                <Link className='btn btn-ghost' href={'/learn/courses'}> Resume Courses</Link>
+
             </div>
         </div>
         </>
