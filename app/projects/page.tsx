@@ -27,7 +27,7 @@ export default () => {
             <div className="card w-80 bg-base-300 text-inherit">
                 <div className="card-body">
                     <h2 className="card-title">Adapting to a Warming World </h2>
-                    <p> Text goes here</p>
+                    <p> IsoAccess will help in adaptation by installing adaptations in areas where the climate is hot or forecasted to become hotter. Not just this, but IsoAccess will also work with local organizations to help better prepare buildings for a world of more extreme weather and warm weather. </p>
                 </div>
             </div>
         </div>
